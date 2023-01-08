@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Flex";
+}
+
+a {
+    text-decoration: none;
+}
+
+
+li {
+    list-style: none;
+}
+
+/* Header */
+.navbar {
+    display: flex;
+    height: 110px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #44874F;
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.menu { 
+    display: flex;
+    font-size: 25px;
+    gap: 30px;
+
+}
+
+
+.menu li {
+    padding: 5px 15px;
+}
+
+.menu a{
+    padding: 10px 20px;
+}
+
+.menu a:hover {
+    transition: 0.3s all ease;
+    color: #44874F;
+    background-color: #fff;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    background-color: #fff;
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 28px;
+}
+
+.hamburger-line::before, 
+.hamburger-line::after{
+    background-color: #fff;
+    content: "";
+    display: block;
+    position: absolute;
+    transition: 0.3s all ease;
+    width: 100%;
+    height: 100%;
+}
+
+.hamburger-line::before{
+    top: 7px;
+}
+
+.hamburger-line::after{
+    top: -7px;
+}
+
+@media (max-width: 768px) {
+
+    .menu {
+        display: none;
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        border-top: 3px solid #fff;
+        text-align: center;
+        right: 0px;
+        left: 0px;
+        margin-top: 20px;
+        z-index: 10;
+    }
+
+    .menu li a{
+        color: rgb(255, 255, 255);
+        display: block;
+        padding: 15px;
+    }
+
+
+    .menu li{
+        transition: 0.5s all ease;
+        background: #44874F;
+        color: #fff;
+        padding: 10px 20px;
+    }
+
+    .menu li:hover{
+        transition: 0.5s all ease;
+        color: #fff;
+    }
+
+    #checkbox_toggle:checked ~ .menu {
+        display: block;
+        max-height: 100%;
+        transition: all 0.5s;
+    }
+
+    .hamburger{
+        display: block;
+        padding: 20px 0px;
+    }
+    
+    #checkbox_toggle:checked ~ .hamburger .hamburger-line {
+        background-color: transparent;
+    }
+
+    #checkbox_toggle:checked ~ .hamburger .hamburger-line::before {
+        transform: rotate(-45deg);
+        top: 0px;
+    }
+
+    #checkbox_toggle:checked ~ .hamburger .hamburger-line::after {
+        transform: rotate(45deg);
+        top: 0px;
+    }
+}
+
+/* /Header */
+
+.about-section{
+    margin-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-title{
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #44874F;
+}
+
+.about-text{
+    text-align: center;
+    font-size: 25px;
+    line-height: 38px;
+    color: #3b3b3b;
+}
+
+#carouselExampleControls{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    margin-left: 600px;
+    width: 700px;
+    height: 500px;
+}
+
+.about-btn-wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.about-btn{
+    font-family: "Roboto Flex";
+    color: #3b3b3b;
+    border: 2px solid #3b3b3b;
+    padding: 10px 40px;
+    font-size: 18px;
+    transition: 0.5s all ease;
+}
+
+.about-btn:hover{
+    color: #fff;
+    border: 2px solid #fff;
+    transition: 0.5s all ease;
+    background: #54955f;
+}
+
+@media (max-width: 1000px){
+
+    #carouselExampleControls{
+        display: none;
+    }
+}

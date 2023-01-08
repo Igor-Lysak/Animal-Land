@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto Flex";
+}
+
+a {
+    text-decoration: none;
+}
+
+
+li {
+    list-style: none;
+}
+
+/* Header */
+.navbar {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #44874F;
+    color: #fff;
+}
+
+.nav-links a {
+    color: #fff;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.menu { 
+    display: flex;
+    font-size: 25px;
+    gap: 30px;
+}
+
+
+.menu li {
+    padding: 5px 15px;
+}
+
+.menu a{
+    padding: 10px 20px;
+}
+
+.menu a:hover {
+    transition: 0.3s all ease;
+    color: #44874F;
+    background-color: #fff;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    background-color: #fff;
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 28px;
+}
+
+.hamburger-line::before, 
+.hamburger-line::after{
+    background-color: #fff;
+    content: "";
+    display: block;
+    position: absolute;
+    transition: 0.3s all ease;
+    width: 100%;
+    height: 100%;
+}
+
+.hamburger-line::before{
+    top: 7px;
+}
+
+.hamburger-line::after{
+    top: -7px;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        max-height: 0;
+        overflow: hidden;
+        position: absolute;
+        border-top: 3px solid #fff;
+        text-align: center;
+        right: 0px;
+        left: 0px;
+        margin-top: 20px;
+        z-index: 10;
+    }
+
+    .menu li a{
+        color: rgb(255, 255, 255);
+        display: block;
+        padding: 15px;
+    }
+
+
+    .menu li{
+        transition: 0.5s all ease;
+        background: #44874F;
+        color: #fff;
+        padding: 10px 20px;
+    }
+
+    .menu li:hover{
+        transition: 0.5s all ease;
+        color: #fff;
+    }
+
+    #checkbox_toggle:checked ~ .menu {
+        display: block;
+        max-height: 100%;
+        transition: all 0.5s;
+    }
+
+    .hamburger{
+        display: block;
+        padding: 20px 0px;
+    }
+    
+    #checkbox_toggle:checked ~ .hamburger .hamburger-line {
+        background-color: transparent;
+    }
+
+    #checkbox_toggle:checked ~ .hamburger .hamburger-line::before {
+        transform: rotate(-45deg);
+        top: 0px;
+    }
+
+    #checkbox_toggle:checked ~ .hamburger .hamburger-line::after {
+        transform: rotate(45deg);
+        top: 0px;
+    }
+}
+
+/* /Header */
+
+
+/* Main */
+.main{
+    margin-top: 158px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.main::before{
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: 0px;
+    background-color: blue;
+    width: 50px;
+    height: 20px;
+}
+
+.main::after{
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: 0px;
+    background-color: rgb(251, 255, 0);
+    width: 50px;
+    height: 20px;
+}
+
+.row{
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+
+.article{
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.article-title{
+    width: 400px;
+    color: #54955f;
+    font-size: 33px;
+    text-align: center;
+}
+
+.article-subtitle{
+    width: 400px;
+    font-size: 19px;
+    color: #3b3b3b;
+    line-height: 25px;
+    margin-left: 10px;
+}
+
+.article-btn{
+    width: 400px;
+    text-align: center;
+    border: 2px solid #3b3b3b;
+    padding: 10px 0px;
+    color: #3b3b3b;
+    font-family: "Roboto Flex";
+    font-size: 18px;
+    transition: 0.4s all ease;
+}
+
+.article-btn:hover{
+    border: 2px solid #fff;
+    color: #fff;
+    background: #54955f;
+    transition: 0.4s all ease;
+}
+
+
+@media (max-width: 768px){
+    .articles{
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+    }
+
+    .row{
+        width: fit-content;
+    }
+}
+
+@media (max-width: 1000px){
+    .articles{
+        flex-direction: column;
+        justify-content: center;
+        width: fit-content;
+    }
+
+    .article{
+        height: 540px;
+    }
+
+    .row{
+        width: fit-content;
+    }
+}
+
+/* /Main */
